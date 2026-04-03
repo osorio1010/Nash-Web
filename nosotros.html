@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiénes Somos | Pastelería Nash</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="imagenes/Logow.png">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+    <a href="inicio.html">
+        <img src="imagenes/nash-logo.png" alt="Logo Pastelería Nash">
+    </a>
+</div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <nav id="nav-menu">
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="index.html">Catálogo</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="overlay" onclick="cerrarMenu()"></div>
+
+<section class="section">
+    <div class="container">
+        <h2>Nuestra Historia</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 50px; align-items: center; margin-top: 40px;">
+            
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--vino); margin-bottom: 20px;">
+                    Pasión por la pastelería desde 2016
+                </h3>
+                <p style="margin-bottom: 20px; font-size: 16px; color: var(--chocolate);">
+                    En <strong>Pastelería Nash</strong>, cada receta cuenta una historia. Lo que comenzó como un sueño familiar en 2016, hoy es una realidad dedicada a endulzar los momentos más importantes de nuestros clientes.
+                </p>
+                <p style="margin-bottom: 20px; font-size: 16px; color: var(--chocolate);">
+                    <strong>Nuestra Visión:</strong> No solo vendemos postres; creamos experiencias sensoriales. Buscamos ser el referente de calidad artesanal, donde la técnica profesional se une con el cariño de lo hecho en casa.
+                </p>
+                <p style="font-style: italic; color: var(--gris);">
+                    "Nuestros encargados supervisan cada detalle, desde la selección del chocolate hasta el último toque de decoración."
+                </p>
+            </div>
+
+            <div style="flex: 1; min-width: 300px; display: flex; justify-content: center;">
+    <div style="position: relative; max-width: 300px; width: 100%;"> <img src="imagenes/Postres-125.jpg" alt="Equipo Nash" 
+             style="width: 100%; height: auto; border-radius: 15px; box-shadow: 15px 15px 0 var(--beige); object-fit: cover;">
+    </div>
+</div>
+
+        </div>
+    </div>
+</section>
+
+<section class="section alt">
+    <div class="container">
+        <h2 style="font-size: 30px;">El Corazón de Nash</h2>
+        <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; margin-top: 40px;">
+            
+            <div style="background: white; padding: 30px; border-radius: 12px; text-align: center; width: 280px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <div style="width: 100px; height: 100px; background: var(--crema); border-radius: 50%; margin: 0 auto 15px;"></div>
+                <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 20px;">Chef Principal</h4>
+                <p style="font-size: 13px; color: var(--gris);">Especialista en pastelería fina y diseño de sabores.</p>
+            </div>
+
+            <div style="background: white; padding: 30px; border-radius: 12px; text-align: center; width: 280px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                <div style="width: 100px; height: 100px; background: var(--crema); border-radius: 50%; margin: 0 auto 15px;"></div>
+                <h4 style="font-family: 'Cormorant Garamond', serif; font-size: 20px;">Gestión de Calidad</h4>
+                <p style="font-size: 13px; color: var(--gris);">Encargado de la selección de insumos y logística.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-bottom">© 2026 Pastelería Nash</div>
+</footer>
+
+<script>
+    function toggleMenu() {
+        document.getElementById("nav-menu").classList.toggle("activo");
+        document.querySelector(".overlay").classList.toggle("activo");
+    }
+    function cerrarMenu() {
+        document.getElementById("nav-menu").classList.remove("activo");
+        document.querySelector(".overlay").classList.remove("activo");
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pastelería Nash | Bienvenidos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="imagenes/Logow.png">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <a href="inicio.html">
+            <img src="imagenes/nash-logo.png" alt="Logo Pastelería Nash">
+        </a>
+    </div>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <nav id="nav-menu">
+        <ul>
+            <li><a href="inicio.html">Inicio</a></li>
+            <li><a href="index.html">Catálogo</a></li>
+            <li><a href="nosotros.html">Nosotros</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="overlay" onclick="cerrarMenu()"></div>
+
+<section class="hero" style="height: 90vh;"> 
+    <div class="hero-text">
+        <h1 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 8vw, 70px); margin-bottom: 20px;">
+            El arte de lo dulce
+        </h1>
+        <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px; letter-spacing: 1px;">
+            Insumos de primera y procesos artesanales que crean momentos inolvidables.
+        </p>
+        <a href="index.html" class="buy-btn" style="text-decoration: none; padding: 15px 40px; display: inline-block; width: auto;">
+            Explorar Catálogo 2026
+        </a>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2>Nuestra Calidad</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px;">
+            
+            <div style="flex: 1; min-width: 300px; text-align: center; padding: 20px;">
+                <div style="font-size: 40px; color: var(--dorado); margin-bottom: 15px;">✨</div>
+                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; margin-bottom: 10px;">Ingredientes Premium</h3>
+                <p style="color: var(--gris); font-size: 14px;">Seleccionamos la mejor materia prima para asegurar un sabor auténtico en cada bocado.</p>
+            </div>
+
+            <div style="flex: 1; min-width: 300px; text-align: center; padding: 20px;">
+                <div style="font-size: 40px; color: var(--dorado); margin-bottom: 15px;">🥣</div>
+                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; margin-bottom: 10px;">Procesos Artesanales</h3>
+                <p style="color: var(--gris); font-size: 14px;">Nada de producción industrial. Respetamos los tiempos de batido y horneado tradicional.</p>
+            </div>
+
+            <div style="flex: 1; min-width: 300px; text-align: center; padding: 20px;">
+                <div style="font-size: 40px; color: var(--dorado); margin-bottom: 15px;">🎨</div>
+                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; margin-bottom: 10px;">Diseño Único</h3>
+                <p style="color: var(--gris); font-size: 14px;">La estética de Nash es inconfundible, cuidamos cada detalle para que sea un regalo a la vista.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section style="
+    position: relative;
+    padding: 120px 5%;
+    text-align: center;
+    color: white;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('imagenes/Postres-131.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+">
+    <h2 style="font-size: clamp(30px, 5vw, 45px); color: white; margin-bottom: 15px; border: none;">
+        ¿Listo para algo especial?
+    </h2>
+    <p style="margin-bottom: 35px; color: rgba(255,255,255,0.9); font-size: 1.2rem; max-width: 700px;">
+        Visita nuestro catálogo y haz tu pedido con 24 horas de anticipación para garantizar la frescura artesanal de Nash.
+    </p>
+    <a href="index.html" class="buy-btn" style="text-decoration: none; padding: 15px 40px; display: inline-block; width: auto; background-color: var(--vino); border: 2px solid white;">
+        Ir a la tienda online
+    </a>
+</section>
+
+<footer class="footer">
+    <div class="container footer-content">
+        <div class="footer-section">
+            <h3>Pastelería Nash</h3>
+            <p>Momentos dulces con productos artesanales y de calidad.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Redes</h4>
+            <p>@pastelerianash</p>
+        </div>
+        <div class="footer-section">
+            <h4>Desde</h4>
+            <p>Since 2016</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © 2026 Pastelería Nash
+    </div>
+</footer>
+
+<script>
+    function toggleMenu() {
+        document.getElementById("nav-menu").classList.toggle("activo");
+        document.querySelector(".overlay").classList.toggle("activo");
+    }
+    function cerrarMenu() {
+        document.getElementById("nav-menu").classList.remove("activo");
+        document.querySelector(".overlay").classList.remove("activo");
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,470 @@
+/* ===== GOOGLE FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap');
+
+/* ===== VARIABLES ===== */
+:root {
+    --chocolate: #3b2a24;
+    --vino: #5c2c2c;
+    --crema: #f4efe9;
+    --beige: #e6d8c9;
+    --dorado: #c6a75e;
+    --gris: #6b6b6b;
+    --white: #ffffff;
+}
+
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--crema);
+    color: var(--chocolate);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.logo a {
+    text-decoration: none;
+    display: block;
+    line-height: 0;
+}
+
+.logo img {
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* ===== OVERLAY ===== */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 3000; /* Debajo del header (4000) y carrito (5000) */
+    display: none;
+    pointer-events: none;
+}
+
+.overlay.activo {
+    display: block;
+    pointer-events: all;
+}
+
+/* ===== HEADER & NAVIGATION ===== */
+header {
+    background-color: var(--chocolate);
+    color: var(--white);
+    padding: 30px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 4000; /* 🔥 Súper importante: Mayor que el overlay (3000) */
+}
+
+.logo img { height: 50px; }
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--white);
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+nav a:hover { color: var(--dorado); }
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--white);
+}
+
+.btn-cerrar-menu {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* ===== HERO ===== */
+.hero {
+    height: 60vh;
+    background: linear-gradient(rgba(59,42,36,0.65), rgba(59,42,36,0.65)),
+                url('imagenes/Postres-96.jpg') center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 5vw, 50px);
+    margin-bottom: 15px;
+}
+
+/* ===== SECTIONS ===== */
+.section {
+    padding: 80px 0;
+    background-color: var(--crema);
+}
+
+.section.alt {
+    background-color: var(--beige);
+}
+
+.section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.section h2 {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+}
+
+.section h2::after {
+    content: "";
+    width: 60px;
+    height: 2px;
+    background: var(--dorado);
+    display: block;
+    margin: 15px auto 40px;
+}
+
+/* ===== PRODUCT CAROUSEL ===== */
+.carousel {
+    position: relative;
+    padding: 0 10px;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel-track::-webkit-scrollbar { display: none; }
+
+.card {
+    min-width: calc(33.333% - 14px);
+    scroll-snap-align: start;
+    background-color: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.product-img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+.card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    padding: 20px 20px 10px;
+    color: var(--vino);
+}
+
+.card p {
+    padding: 0 20px;
+    font-size: 14px;
+    color: var(--gris);
+    flex-grow: 1;
+}
+
+.selector-precio {
+    width: calc(100% - 40px);
+    margin: 15px 20px;
+    padding: 10px;
+    border: 1px solid var(--beige);
+    border-radius: 6px;
+    background: var(--crema);
+}
+
+/* ===== INPUTS ENTREGA ===== */
+.entrega {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.entrega label {
+    font-size: 13px;
+    color: var(--gris);
+}
+
+.entrega input,
+.entrega select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--beige);
+    border-radius: 6px;
+    background: var(--crema);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}
+
+.product-buttons {
+    display: flex;
+    gap: 10px;
+    padding: 0 20px 20px;
+}
+
+.product-buttons button {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.product-buttons button:first-child { background: var(--vino); color: white; }
+.product-buttons button:last-child { background: var(--chocolate); color: white; }
+
+/* ===== FLECHAS ===== */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+    background: var(--chocolate);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow.left { left: -20px; }
+.arrow.right { right: -20px; }
+
+/* ===== CARRITO PANEL ===== */
+.cart-bubble {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: var(--vino);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 5000;
+}
+
+.carrito-panel {
+    position: fixed;
+    bottom: 100px;
+    right: 25px;
+    width: 380px;
+    max-width: 90vw;
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+    z-index: 5000;
+    display: none;
+}
+
+.carrito-panel.activo { display: block; }
+
+.btn-cerrar-carrito {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    color: var(--gris);
+}
+
+#lista-carrito li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.controles-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-cant {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: var(--chocolate);
+    color: white;
+    border-radius: 6px;
+}
+
+.btn-eliminar-item {
+    background: none;
+    border: none;
+    color: #cc3333;
+    font-size: 20px;
+}
+
+.buy-btn {
+    width: 100%;
+    padding: 15px;
+    background: var(--chocolate);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: var(--chocolate);
+    color: var(--crema);
+    margin-top: 60px;
+    width: 100%;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 5%;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.footer-section { flex: 1; min-width: 250px; }
+.footer-section h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; margin-bottom: 15px; color: var(--white); }
+.footer-section h4 { margin-bottom: 12px; font-size: 14px; text-transform: uppercase; color: var(--dorado); }
+.footer-section p { font-size: 14px; color: var(--beige); line-height: 1.8; }
+.footer-section a { color: var(--beige); text-decoration: none; }
+
+.footer-bottom {
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    background: #2a1d19;
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ===== RESPONSIVE MOBILE ===== */
+@media (max-width: 768px) {
+    header { padding: 15px 5%; }
+    .menu-toggle { display: block; }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--chocolate);
+        transition: 0.4s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* 🔥 El z-index aquí no necesita ser 5000 porque ya heredó los 4000 del header padre */
+        z-index: 4500; 
+    }
+
+    nav.activo { right: 0; }
+
+    /* Estilo para la X arriba a la izquierda del menú */
+    .btn-cerrar-menu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        left: 20px; /* Posición izquierda */
+        right: auto; /* Anulamos el right: 20px previo */
+        font-size: 40px;
+        color: white;
+        cursor: pointer;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 35px;
+    }
+
+    nav a { font-size: 20px; }
+
+    .card {
+        min-width: 85%;
+        scroll-snap-align: center;
+    }
+
+    .arrow { display: none; }
+
+    .section { padding: 50px 0; }
+    
+    .carrito-panel {
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .footer-section { min-width: 100%; }
+}
