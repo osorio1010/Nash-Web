@@ -51,7 +51,7 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.5);
-    z-index: 3000; /* Debajo del header (4000) y carrito (5000) */
+    z-index: 3000; 
     display: none;
     pointer-events: none;
 }
@@ -71,7 +71,7 @@ header {
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 4000; /* 🔥 Súper importante: Mayor que el overlay (3000) */
+    z-index: 4000;
 }
 
 .logo img { height: 50px; }
@@ -417,19 +417,17 @@ nav a:hover { color: var(--dorado); }
         display: flex;
         align-items: center;
         justify-content: center;
-        /* 🔥 El z-index aquí no necesita ser 5000 porque ya heredó los 4000 del header padre */
         z-index: 4500; 
     }
 
     nav.activo { right: 0; }
 
-    /* Estilo para la X arriba a la izquierda del menú */
     .btn-cerrar-menu {
         display: block;
         position: absolute;
         top: 20px;
-        left: 20px; /* Posición izquierda */
-        right: auto; /* Anulamos el right: 20px previo */
+        left: 20px; 
+        right: auto; 
         font-size: 40px;
         color: white;
         cursor: pointer;
@@ -443,14 +441,52 @@ nav a:hover { color: var(--dorado); }
 
     nav a { font-size: 20px; }
 
+    /* Cambios para mostrar 2 productos */
+    .carousel-track {
+        gap: 12px; /* Reducimos el espacio entre tarjetas */
+        padding: 15px 5px;
+    }
+
     .card {
-        min-width: 85%;
-        scroll-snap-align: center;
+        min-width: calc(50% - 10px); /* Ocupa la mitad menos el margen */
+        scroll-snap-align: start;
+    }
+
+    .product-img {
+        height: 180px; /* Reducimos altura de imagen para que no quede muy larga */
+    }
+
+    .card h3 {
+        font-size: 18px; /* Texto un poco más pequeño para caber en 2 columnas */
+        padding: 12px 12px 5px;
+    }
+
+    .card p {
+        font-size: 12px;
+        padding: 0 12px;
+    }
+
+    .selector-precio {
+        width: calc(100% - 24px);
+        margin: 10px 12px;
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .product-buttons {
+        padding: 0 12px 12px;
+        flex-direction: column; /* Botones uno sobre otro si el espacio es muy poco */
+        gap: 5px;
+    }
+
+    .product-buttons button {
+        padding: 8px;
+        font-size: 12px;
     }
 
     .arrow { display: none; }
 
-    .section { padding: 50px 0; }
+    .section { padding: 40px 0; }
     
     .carrito-panel {
         bottom: 0;
