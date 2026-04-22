@@ -5,7 +5,7 @@
     "imagen": "imagenes/mini-chilenitos.png",
     "descripcion": "Discos de hojarasca de 3 cm, unidos por manjar y con azúcar flor",
     "precios": [
-      { "cantidad": 30, "precio": 13000 }
+      { "cantidad": 30, "precio": 18000 }
     ]
   },
   {
@@ -14,7 +14,7 @@
     "imagen": "imagenes/mini-eclaire.png",
     "descripcion": "Masa choux de 6 cm, rellena con crema y glaseado de chocolate",
     "precios": [
-      { "cantidad": 30, "precio": 15000 }
+      { "cantidad": 30, "precio": 21000 }
     ]
   },
   {
@@ -23,7 +23,7 @@
     "imagen": "imagenes/mini-profiteroles.png",
     "descripcion": "Masa choux de 3 cm rellena con crema chantilly y manjar",
     "precios": [
-      { "cantidad": 30, "precio": 14000 }
+      { "cantidad": 30, "precio": 21000 }
     ]
   },
   {
@@ -32,16 +32,16 @@
     "imagen": "imagenes/mini-cachitos.png",
     "descripcion": "Masa de hojarasca crujiente de 4 cm, rellenos con manjar",
     "precios": [
-      { "cantidad": 30, "precio": 12000 }
+      { "cantidad": 30, "precio": 18000 }
     ]
   },
   {
     "nombre": "Mini Kuchen",
     "categoria": "mini",
-    "imagen": "imagenes/mini-kuchen.png",
+    "imagen": "imagenes/mini-kuchen.jpg",
     "descripcion": "Mix de frutos rojos seleccionados, deliciosa masa crujiente de 4 cm",
     "precios": [
-      { "cantidad": 20, "precio": 19800 }
+      { "cantidad": 20, "precio": 22000 }
     ]
   },
   {
@@ -50,7 +50,7 @@
     "imagen": "imagenes/mini-pie-limon.png",
     "descripcion": "Masa crujiente con relleno de limón y merengue",
     "precios": [
-      { "cantidad": 20, "precio": 19800 }
+      { "cantidad": 20, "precio": 22000 }
     ]
   },
   {
@@ -59,7 +59,7 @@
     "imagen": "imagenes/profiterol.jpg",
     "descripcion": "Masa choux de 6 cm con crema chantilly y manjar",
     "precios": [
-      { "cantidad": 20, "precio": 17000 }
+      { "cantidad": 20, "precio": 22000 }
     ]
   },
   {
@@ -68,7 +68,7 @@
     "imagen": "imagenes/eclaire.jpg",
     "descripcion": "Masa choux de 9 cm con crema y glaseado de chocolate",
     "precios": [
-      { "cantidad": 20, "precio": 19000 }
+      { "cantidad": 20, "precio": 22000 }
     ]
   },
   {
@@ -77,7 +77,7 @@
     "imagen": "imagenes/chilenitos.png",
     "descripcion": "Discos de hojarasca de 8 cm, unidos por manjar y con azúcar flor",
     "precios": [
-      { "cantidad": 20, "precio": 18000 }
+      { "cantidad": 20, "precio": 19000 }
     ]
   },
   {
@@ -86,25 +86,25 @@
     "imagen": "imagenes/cachitos.png",
     "descripcion": "Masa de hojarasca crujiente de 8 cm, rellenos con manjar",
     "precios": [
-      { "cantidad": 20, "precio": 16000 }
+      { "cantidad": 20, "precio": 19000 }
     ]
   },
   {
-    "nombre": "Kuchen Frutos Rojos (10cm)",
+    "nombre": "Kuchen Frutos Rojos (Variedades)",
     "categoria": "individual",
-    "imagen": "imagenes/frutos-rojosb.png",
+    "imagen": "imagenes/frutos-rojosb.jpg",
     "descripcion": "Mix de frutos rojos seleccionados, deliciosa masa crujiente de 10 cm",
     "precios": [
-      { "cantidad": 15, "precio": 29000 }
+      { "cantidad": 15, "precio": 32000 }
     ]
   },
   {
-    "nombre": "Pie de Limón (10cm)",
+    "nombre": "Pie de Limón",
     "categoria": "individual",
     "imagen": "imagenes/pie-limonb.png",
     "descripcion": "Masa de hojarasca crujiente y delicada de 10 cm, rellenos de punta a punta con manjar de campo premium",
     "precios": [
-      { "cantidad": 15, "precio": 29000 }
+      { "cantidad": 15, "precio": 32000 }
     ]
   },
   {
@@ -113,18 +113,18 @@
     "imagen": "imagenes/donuts.png",
     "descripcion": "Donuts horneados de 7 cm con distintas opciones de relleno",
     "precios": [
-    { "cantidad": 12, "precio": 14000, "relleno": "Sin relleno" },
+    { "cantidad": 12, "precio": 15000, "relleno": "Sin relleno" },
     { "cantidad": 12, "precio": 18000, "relleno": "Manjar" },
-    { "cantidad": 12, "precio": 21000, "relleno": "Nutella" }
+    { "cantidad": 12, "precio": 21600, "relleno": "Nutella" }
   ]
   },
   {
-    "nombre": "Muffins",
+    "nombre": "Muffins (120 gr)",
     "categoria": "individual",
     "imagen": "imagenes/muffins.png",
     "descripcion": "Masa esponjosa artesanal en versiones Chocolate, Frambuesa, Arándanos, Plátano-Nuez o Chips de Chocolate",
     "precios": [
-      { "cantidad": 15, "precio": 29000 }
+      { "cantidad": 12, "precio": 27000 }
     ]
   },
   {
@@ -133,7 +133,7 @@
     "imagen": "imagenes/seleccion-a.png",
     "descripcion": "Kuchen de frutos rojos (10-12 personas) + 30 mini eclaire + 30 mini chilenitos",
     "precios": [
-      { "precio": 43990 }
+      { "precio": 54900 }
     ]
   },
   {
@@ -142,7 +142,7 @@
     "imagen": "imagenes/pack-b.png",
     "descripcion": "Pie de limón (10-12 personas) + 30 mini profiteroles + 30 mini cachitos",
     "precios": [
-      { "precio": 41990 }
+      { "precio": 54900 }
     ]
   },
   {
@@ -151,7 +151,7 @@
     "imagen": "imagenes/pack-c.png",
     "descripcion": "Lemon cake + 18 mini donuts de manjar + 18 mini donuts de Nutella",
     "precios": [
-      { "precio": 43990 }
+      { "precio": 46900 }
     ]
   },
   {
@@ -160,7 +160,7 @@
     "imagen": "imagenes/frutos-rojos.jpg",
     "descripcion": "Mix de frutos rojos seleccionados con masa crujiente (10-12 personas)",
     "precios": [
-      { "personas": "10-12", "precio": 16990 }
+      { "personas": "10-12", "precio": 20000 }
     ]
   },
   {
@@ -169,7 +169,7 @@
     "imagen": "imagenes/pie-limon.jpg",
     "descripcion": "Crema de limón con merengue italiano flameado (10-12 personas)",
     "precios": [
-      { "personas": "10-12", "precio": 16990 }
+      { "personas": "10-12", "precio": 20000 }
     ]
   },
   {
@@ -178,11 +178,11 @@
     "imagen": "imagenes/lemon-cake.jpg",
     "descripcion": "Bizcocho húmedo con esencia de limón y glaseado cítrico (10-12 personas)",
     "precios": [
-      { "personas": "10-12", "precio": 13990 }
+      { "personas": "10-12", "precio": 17000 }
     ]
   },
   {
-    "nombre": "Torta Manjar Nuez",
+    "nombre": "Manjar Nuez",
     "categoria": "torta",
     "imagen": "imagenes/manjar-nuez.jpg",
     "descripcion": "Bizcocho de vainilla con manjar y nueces",
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "nombre": "Torta Piña Manjar",
+    "nombre": "Piña Manjar",
     "categoria": "torta",
     "imagen": "imagenes/pina-manjar.jpg",
     "descripcion": "Bizcocho con piña en almíbar y manjar",
@@ -202,7 +202,7 @@
     ]
   },
   {
-    "nombre": "Torta Manjar Frambuesa",
+    "nombre": "Manjar Frambuesa",
     "categoria": "torta",
     "imagen": "imagenes/manjar-frambuesa.jpg",
     "descripcion": "Bizcocho con frambuesas, crema chantilly y manjar",
@@ -212,7 +212,7 @@
     ]
   },
   {
-    "nombre": "Torta Chocolate",
+    "nombre": "Chocolate",
     "categoria": "torta",
     "imagen": "imagenes/chocolate.png",
     "descripcion": "Bizcocho de chocolate con ganache y manjar",
@@ -222,7 +222,7 @@
     ]
   },
   {
-    "nombre": "Torta Pompadour",
+    "nombre": "Pompadour",
     "categoria": "torta",
     "imagen": "imagenes/pompadour.png",
     "descripcion": "Hojarasca con manjar y crema sabor plátano",
@@ -232,7 +232,7 @@
     ]
   },
   {
-    "nombre": "Torta Tres Leches",
+    "nombre": "Tres Leches",
     "categoria": "torta",
     "imagen": "imagenes/tres-leches.png",
     "descripcion": "Bizcocho húmedo en mezcla de tres leches con crema chantilly",
@@ -242,7 +242,7 @@
     ]
   },
   {
-    "nombre": "Torta Cuatro Leches Frambuesa",
+    "nombre": "Cuatro Leches Frambuesa",
     "categoria": "torta",
     "imagen": "imagenes/cuatro-leches-frambuesa.png",
     "descripcion": "Base de tres leches con manjar y frambuesas",
@@ -252,7 +252,7 @@
     ]
   },
   {
-    "nombre": "Torta Manjar Lúcuma",
+    "nombre": "Manjar Lúcuma",
     "categoria": "torta",
     "imagen": "imagenes/manjar-lucuma.png",
     "descripcion": "Bizcocho con manjar y crema de lúcuma",
