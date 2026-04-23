@@ -45,11 +45,11 @@ async function cargarProductos() {
 
         const opciones = prod.precios.map((p, i) => {
             if (p.cantidad) {
-                return `<option value="${i}">${p.cantidad} unidades${p.relleno ? " - " + p.relleno : ""} - $${p.precio.toLocaleString()}</option>`;
+                return `<option value="${i}" data-precio="${p.precio}">${p.cantidad} unidades${p.relleno ? " - " + p.relleno : ""} - $${p.precio.toLocaleString("es-CL")}</option>`;
             } else if (p.personas) {
-                return `<option value="${i}">${p.personas} personas - $${p.precio.toLocaleString()}</option>`;
+                return `<option value="${i}" data-precio="${p.precio}">${p.personas} personas - $${p.precio.toLocaleString("es-CL")}</option>`;
             } else {
-                return `<option value="${i}">$${p.precio.toLocaleString()}</option>`;
+                return `<option value="${i}" data-precio="${p.precio}">$${p.precio.toLocaleString("es-CL")}</option>`;
             }
         }).join("");
 
@@ -111,20 +111,23 @@ function consultarProducto(nombre) {
     window.open(`https://wa.me/${telefonoEmpresa}?text=Hola, quiero consultar por ${encodeURIComponent(nombre)}`, "_blank");
 }
 
+// Objeto separado que guarda el precio numérico de cada key del carrito
+const carritoPrecios = {};
+
 function agregarAlCarritoConPrecio(btn, nombre) {
     const card = btn.closest(".card");
     const select = card.querySelector(".selector-precio");
 
-    const texto = select.options[select.selectedIndex].text;
+    const selectedOption = select.options[select.selectedIndex];
+    const texto = selectedOption.text;
     const precio = texto.split("$")[1];
+    const precioNum = parseInt(selectedOption.dataset.precio || "0");
 
     const key = `${nombre} - $${precio}`;
 
     carrito[key] = (carrito[key] || 0) + 1;
+    carritoPrecios[key] = precioNum; // precio numérico limpio desde el JSON
 
-    // ✅ OPTIMIZACIÓN: el Audio se crea una vez al inicio del script.
-    // play() puede fallar silenciosamente si el usuario no ha interactuado
-    // aún con la página — se captura el error para no romper nada.
     sonidoAgregar.currentTime = 0;
     sonidoAgregar.play().catch(() => {});
 
@@ -146,15 +149,15 @@ function actualizarCarrito() {
     const lista = document.getElementById("lista-carrito");
     const contador = document.getElementById("cart-count");
 
-    // ✅ OPTIMIZACIÓN: se usa un fragment para evitar múltiples reflows
     const fragment = document.createDocumentFragment();
-    let total = 0;
+    let totalItems = 0;
+    let totalPrecio = 0;
 
     for (let p in carrito) {
-        total += carrito[p];
+        totalItems += carrito[p];
+        totalPrecio += (carritoPrecios[p] || 0) * carrito[p];
 
         const li = document.createElement("li");
-        // Se usan data attributes para evitar inyección de comillas en onclick
         li.innerHTML = `
             <span>${p} x${carrito[p]}</span>
             <div class="controles-item">
@@ -166,9 +169,19 @@ function actualizarCarrito() {
         fragment.appendChild(li);
     }
 
+    if (totalItems > 0) {
+        const liTotal = document.createElement("li");
+        liTotal.classList.add("carrito-total");
+        liTotal.innerHTML = `
+            <span><strong>Total</strong></span>
+            <span><strong>$${totalPrecio.toLocaleString("es-CL")}</strong></span>
+        `;
+        fragment.appendChild(liTotal);
+    }
+
     lista.innerHTML = "";
     lista.appendChild(fragment);
-    contador.textContent = total;
+    contador.textContent = totalItems;
 }
 
 // ✅ OPTIMIZACIÓN: event delegation en lugar de onclick inline por cada botón.
@@ -254,14 +267,17 @@ function comprarPorWhatsApp() {
         return;
     }
 
+    let totalPrecio = 0;
     let mensaje = "Hola, quiero realizar el siguiente pedido:\n\n";
 
     for (let producto in carrito) {
         mensaje += `• ${producto} x${carrito[producto]}\n`;
+        totalPrecio += (carritoPrecios[producto] || 0) * carrito[producto];
     }
 
-    mensaje += `\nFecha de entrega: ${fecha}`;
-    mensaje += `\nHora: ${hora}`;
+    mensaje += `\n💰 Total: $${totalPrecio.toLocaleString("es-CL")}`;
+    mensaje += `\n📅 Fecha de entrega: ${fecha}`;
+    mensaje += `\n🕐 Hora: ${hora}`;
 
     const url = `https://wa.me/${telefonoEmpresa}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, "_blank");

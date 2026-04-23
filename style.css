@@ -741,6 +741,16 @@ nav a:hover::after {
     transform: scale(1.1);
 }
 
+/* Fila de total en el carrito */
+.carrito-total {
+    border-top: 2px solid var(--dorado) !important;
+    border-bottom: none !important;
+    margin-top: 6px;
+    padding-top: 14px !important;
+    font-size: 14px !important;
+    color: var(--chocolate);
+}
+
 .buy-btn {
     width: 100%;
     padding: 15px;
