@@ -226,6 +226,8 @@ nav a:hover::after {
     text-align: center;
     color: var(--white);
     min-height: 480px;
+    width: 100%;        /* ✅ fuerza ancho completo en móvil */
+    max-width: 100%;
 }
 
 /* La imagen real — posicionada absolute para ocupar todo el hero */
@@ -1043,15 +1045,13 @@ nav a:hover::after {
 
 /* Grid de calidad */
 .calidad-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
     margin-top: 40px;
 }
 
 .calidad-item {
-    flex: 1;
-    min-width: 280px;
     text-align: center;
     padding: 30px 20px;
     background: var(--white);
@@ -1167,12 +1167,8 @@ nav a:hover::after {
 /* ===== RESPONSIVE INICIO ===== */
 @media (max-width: 768px) {
     .calidad-grid {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 16px;
-    }
-
-    .calidad-item {
-        min-width: unset;
     }
 
     .cta-section {
