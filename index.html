@@ -5,6 +5,21 @@
     <title>Catálogo | Pastelería Nash</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- ✅ OPTIMIZACIÓN #1: preconnect antes que todo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- ✅ OPTIMIZACIÓN #2: preload imagen hero (LCP) — debe ir ANTES del CSS -->
+    <link rel="preload" as="image" href="imagenes/Postres-96.webp" fetchpriority="high">
+
+    <!-- ✅ OPTIMIZACIÓN #3: Google Fonts sin bloquear render -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+          media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap">
+    </noscript>
+
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="imagenes/Logow.png">
 </head>
@@ -62,7 +77,22 @@
     <button class="buy-btn" onclick="comprarPorWhatsApp()">Comprar por WhatsApp</button>
 </div>
 
+<!-- ✅ OPTIMIZACIÓN #4: Hero con <img> real en lugar de background-image -->
 <section class="hero" style="height: 40vh;">
+    <picture>
+        <source srcset="imagenes/Postres-96.avif" type="image/avif">
+        <source srcset="imagenes/Postres-96.webp" type="image/webp">
+        <img
+            src="imagenes/Postres-96.jpg"
+            alt=""
+            class="hero-img"
+            fetchpriority="high"
+            decoding="sync"
+            width="1920"
+            height="1080"
+        >
+    </picture>
+    <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-text">
         <h2>Un abrazo dulce en cada bocado</h2>
         <p>Colección 2026</p>
@@ -144,7 +174,8 @@
     </div>
 </footer>
 
-<script src="script.js"></script>
+<!-- ✅ OPTIMIZACIÓN #5: script al final, sin bloquear render -->
+<script src="script.js" defer></script>
 
 </body>
 </html>
