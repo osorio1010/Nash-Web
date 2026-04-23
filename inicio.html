@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <title>Pastelería Nash | Bienvenidos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ✅ Preconnect para Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- ✅ Preload imagen hero (LCP) — antes del CSS -->
+    <link rel="preload" as="image" href="imagenes/Postres-96.jpg" fetchpriority="high">
+
+    <!-- ✅ Google Fonts sin bloquear render -->
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+          media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap">
+    </noscript>
+
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="imagenes/Logow.png">
 </head>
@@ -20,78 +36,82 @@
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
     <nav id="nav-menu">
+        <div class="btn-cerrar-menu" onclick="cerrarMenu()">×</div>
         <ul>
-            <li><a href="inicio.html">Inicio</a></li>
-            <li><a href="index.html">Catálogo</a></li>
-            <li><a href="nosotros.html">Nosotros</a></li>
+            <li><a href="inicio.html" onclick="cerrarMenu()">Inicio</a></li>
+            <li><a href="index.html" onclick="cerrarMenu()">Catálogo</a></li>
+            <li><a href="nosotros.html" onclick="cerrarMenu()">Nosotros</a></li>
         </ul>
     </nav>
 </header>
 
 <div class="overlay" onclick="cerrarMenu()"></div>
 
-<section class="hero" style="height: 90vh;"> 
+<!-- ✅ Hero con <img> real en lugar de background-image (fix LCP) -->
+<section class="hero" style="height: 90vh;">
+    <img
+        src="imagenes/Postres-96.jpg"
+        alt=""
+        class="hero-img"
+        fetchpriority="high"
+        decoding="sync"
+        width="1920"
+        height="1080"
+    >
+    <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-text">
-        <h1 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 8vw, 70px); margin-bottom: 20px;">
-            El arte de lo dulce
-        </h1>
-        <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto 30px; letter-spacing: 1px;">
-            Insumos de primera y procesos artesanales que crean momentos inolvidables.
-        </p>
-        <a href="index.html" class="buy-btn" style="text-decoration: none; padding: 15px 40px; display: inline-block; width: auto;">
-            Explorar Catálogo 2026
-        </a>
+        <h1>El arte de lo dulce</h1>
+        <p>Insumos de primera y procesos artesanales que crean momentos inolvidables.</p>
+        <a href="index.html" class="buy-btn hero-cta">Explorar Catálogo 2026</a>
     </div>
 </section>
 
+<!-- Sección calidad -->
 <section class="section">
     <div class="container">
         <h2>Nuestra Calidad</h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px;">
-            
-            <div style="flex: 1; min-width: 300px; text-align: center; padding: 20px;">
-                <div style="font-size: 40px; color: var(--dorado); margin-bottom: 15px;">✨</div>
-                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; margin-bottom: 10px;">Ingredientes Premium</h3>
-                <p style="color: var(--gris); font-size: 14px;">Seleccionamos la mejor materia prima para asegurar un sabor auténtico en cada bocado.</p>
+        <div class="calidad-grid">
+
+            <div class="calidad-item">
+                <div class="calidad-icono">✨</div>
+                <h3>Ingredientes Premium</h3>
+                <p>Seleccionamos la mejor materia prima para asegurar un sabor auténtico en cada bocado.</p>
             </div>
 
-            <div style="flex: 1; min-width: 300px; text-align: center; padding: 20px;">
-                <div style="font-size: 40px; color: var(--dorado); margin-bottom: 15px;">🥣</div>
-                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; margin-bottom: 10px;">Procesos Artesanales</h3>
-                <p style="color: var(--gris); font-size: 14px;">Nada de producción industrial. Respetamos los tiempos de batido y horneado tradicional.</p>
+            <div class="calidad-item">
+                <div class="calidad-icono">🥣</div>
+                <h3>Procesos Artesanales</h3>
+                <p>Nada de producción industrial. Respetamos los tiempos de batido y horneado tradicional.</p>
             </div>
 
-            <div style="flex: 1; min-width: 300px; text-align: center; padding: 20px;">
-                <div style="font-size: 40px; color: var(--dorado); margin-bottom: 15px;">🎨</div>
-                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 24px; margin-bottom: 10px;">Diseño Único</h3>
-                <p style="color: var(--gris); font-size: 14px;">La estética de Nash es inconfundible, cuidamos cada detalle para que sea un regalo a la vista.</p>
+            <div class="calidad-item">
+                <div class="calidad-icono">🎨</div>
+                <h3>Diseño Único</h3>
+                <p>La estética de Nash es inconfundible, cuidamos cada detalle para que sea un regalo a la vista.</p>
             </div>
 
         </div>
     </div>
 </section>
 
-<section style="
-    position: relative;
-    padding: 120px 5%;
-    text-align: center;
-    color: white;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.2)), url('imagenes/Postres-131.jpg') center/cover no-repeat;
-    background-attachment: fixed;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-">
-    <h2 style="font-size: clamp(30px, 5vw, 45px); color: white; margin-bottom: 15px; border: none;">
-        ¿Listo para algo especial?
-    </h2>
-    <p style="margin-bottom: 35px; color: rgba(255,255,255,0.9); font-size: 1.2rem; max-width: 700px;">
-        Visita nuestro catálogo y haz tu pedido con 24 horas de anticipación para garantizar la frescura artesanal de Nash.
-    </p>
-    <a href="index.html" class="buy-btn" style="text-decoration: none; padding: 15px 40px; display: inline-block; width: auto; background-color: var(--vino); border: 2px solid white;">
-        Ir a la tienda online
-    </a>
+<!-- ✅ Sección CTA — background-attachment: fixed eliminado (causa scroll lag en móvil)
+     Reemplazado por <img> posicionado absolute, igual que el hero -->
+<section class="cta-section">
+    <img
+        src="imagenes/Postres-131.jpg"
+        alt=""
+        class="cta-img"
+        loading="lazy"
+        decoding="async"
+        width="1920"
+        height="1080"
+    >
+    <div class="cta-overlay" aria-hidden="true"></div>
+    <div class="cta-content">
+        <h2>¿Listo para algo especial?</h2>
+        <p>Visita nuestro catálogo y haz tu pedido con 24 horas de anticipación para garantizar la frescura artesanal de Nash.</p>
+        <a href="index.html" class="buy-btn cta-btn">Ir a la tienda online</a>
+    </div>
 </section>
 
 <footer class="footer">

@@ -1009,3 +1009,178 @@ nav a:hover::after {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* ===== INICIO.HTML — ESTILOS ESPECÍFICOS ===== */
+
+/* Hero h1 (inicio usa h1, catálogo usa h2) */
+.hero-text h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 8vw, 70px);
+    font-weight: 300;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    animation: heroReveal 1s var(--ease-out) both;
+}
+
+.hero-text p {
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    letter-spacing: 1px;
+    color: rgba(255,255,255,0.88);
+    animation: heroReveal 1s 0.15s var(--ease-out) both;
+}
+
+/* Botón CTA del hero (link <a> estilizado como botón) */
+.hero-cta {
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    width: auto;
+    animation: heroReveal 1s 0.3s var(--ease-out) both;
+}
+
+/* Grid de calidad */
+.calidad-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.calidad-item {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+    padding: 30px 20px;
+    background: var(--white);
+    border-radius: 4px;
+    border: 1px solid rgba(198,167,94,0.12);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s var(--ease-out), box-shadow 0.3s ease;
+}
+
+.calidad-item:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.calidad-icono {
+    font-size: 38px;
+    color: var(--dorado);
+    margin-bottom: 15px;
+}
+
+.calidad-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--vino);
+}
+
+.calidad-item p {
+    color: var(--gris);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* ===== SECCIÓN CTA CON IMAGEN =====
+   ✅ background-attachment: fixed eliminado — causa scroll lag en móvil
+   porque deshabilita la aceleración GPU del scroll en iOS/Android.
+   Reemplazado por <img> posicionado absolute (mismo patrón que el hero). */
+.cta-section {
+    position: relative;
+    padding: 120px 5%;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    min-height: 420px;
+}
+
+.cta-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cta-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.60) 0%,
+        rgba(0,0,0,0.20) 100%
+    );
+    pointer-events: none;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+}
+
+.cta-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(30px, 5vw, 45px);
+    font-weight: 300;
+    color: white;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+/* Override del ::after del h2 de .section (aquí no queremos el ornamento) */
+.cta-content h2::after {
+    display: none;
+}
+
+.cta-content p {
+    margin-bottom: 35px;
+    color: rgba(255,255,255,0.90);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.cta-btn {
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    width: auto;
+    background-color: var(--vino);
+    border: 2px solid white;
+}
+
+.cta-btn:hover {
+    background-color: white;
+    color: var(--vino);
+}
+
+/* ===== RESPONSIVE INICIO ===== */
+@media (max-width: 768px) {
+    .calidad-grid {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .calidad-item {
+        min-width: unset;
+    }
+
+    .cta-section {
+        padding: 80px 5%;
+    }
+
+    .hero-cta {
+        padding: 13px 30px;
+        font-size: 11px;
+    }
+}
