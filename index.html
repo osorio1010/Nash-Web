@@ -5,6 +5,9 @@
     <title>Pastelería Nash | Bienvenidos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- ✅ Canonical -->
+    <link rel="canonical" href="https://pastelerianash.cl/">
+
     <!-- ✅ Preconnect para Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,8 +26,43 @@
     <!-- ✅ SEO: Meta descripción -->
     <meta name="description" content="Pastelería Nash — postres artesanales elaborados con ingredientes premium desde 2016. Tortas, minis, tartas y packs dulces hechos con cariño para tus momentos especiales.">
 
+    <!-- ✅ SEO: Open Graph (preview en WhatsApp, Instagram, Facebook) -->
+    <meta property="og:title" content="Pastelería Nash | Postres Artesanales">
+    <meta property="og:description" content="Tortas, minis, tartas y packs artesanales hechos con amor. Pide tu postre personalizado con 24 hrs de anticipación.">
+    <meta property="og:image" content="https://pastelerianash.cl/imagenes/Postres-96.jpg">
+    <meta property="og:url" content="https://pastelerianash.cl/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CL">
+    <meta property="og:site_name" content="Pastelería Nash">
+
+    <!-- ✅ SEO: Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pastelería Nash | Postres Artesanales">
+    <meta name="twitter:description" content="Tortas, minis, tartas y packs artesanales hechos con amor. Pide tu postre personalizado con 24 hrs de anticipación.">
+    <meta name="twitter:image" content="https://pastelerianash.cl/imagenes/Postres-96.jpg">
+
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="imagenes/Logow.png">
+
+    <!-- ✅ SEO: Schema.org — Bakery local -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Bakery",
+      "name": "Pastelería Nash",
+      "url": "https://pastelerianash.cl",
+      "foundingDate": "2016",
+      "description": "Pastelería artesanal con tortas, minis, tartas y packs dulces hechos con ingredientes premium.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "CL",
+        "addressRegion": "Región Metropolitana"
+      },
+      "sameAs": [
+        "https://www.instagram.com/pastelerianash"
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -54,7 +92,7 @@
 <section class="hero" style="height: 90vh;">
     <img
         src="imagenes/Postres-96.jpg"
-        alt=""
+        alt="Postres artesanales de Pastelería Nash"
         class="hero-img"
         fetchpriority="high"
         decoding="sync"
@@ -97,12 +135,10 @@
     </div>
 </section>
 
-<!-- ✅ Sección CTA — background-attachment: fixed eliminado (causa scroll lag en móvil)
-     Reemplazado por <img> posicionado absolute, igual que el hero -->
 <section class="cta-section">
     <img
         src="imagenes/Postres-131.jpg"
-        alt=""
+        alt="Catálogo de postres Pastelería Nash"
         class="cta-img"
         loading="lazy"
         decoding="async"
@@ -121,15 +157,15 @@
     <div class="container footer-content">
         <div class="footer-section">
             <h3>Pastelería Nash</h3>
-            <p>Momentos dulces con productos artesanales y de calidad.</p>
+            <p>Momentos dulces con productos artesanales y de calidad. Santiago, Chile.</p>
         </div>
         <div class="footer-section">
             <h4>Redes</h4>
-            <p>@pastelerianash</p>
+            <p><a href="https://www.instagram.com/pastelerianash" target="_blank" rel="noopener">@pastelerianash</a></p>
         </div>
         <div class="footer-section">
-            <h4>Desde</h4>
-            <p>Since 2016</p>
+            <h4>Contacto</h4>
+            <p>Pedidos vía WhatsApp con 24 hrs de anticipación</p>
         </div>
     </div>
     <div class="footer-bottom">
