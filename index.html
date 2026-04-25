@@ -2,20 +2,17 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Catálogo | Pastelería Nash</title>
+    <title>Pastelería Nash | Bienvenidos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- ✅ SEO: Meta descripción -->
-    <meta name="description" content="Pastelería Nash — tortas, minis, tartas y packs artesanales hechos con amor. Pide tu postre personalizado con 24 hrs de anticipación.">
-
-    <!-- ✅ OPTIMIZACIÓN #1: preconnect antes que todo -->
+    <!-- ✅ Preconnect para Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- ✅ OPTIMIZACIÓN #2: preload imagen hero (LCP) — debe ir ANTES del CSS -->
-    <link rel="preload" as="image" href="imagenes/Postres-96.webp" fetchpriority="high">
+    <!-- ✅ Preload imagen hero (LCP) — antes del CSS -->
+    <link rel="preload" as="image" href="imagenes/Postres-96.jpg" fetchpriority="high">
 
-    <!-- ✅ OPTIMIZACIÓN #3: Google Fonts sin bloquear render -->
+    <!-- ✅ Google Fonts sin bloquear render -->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
           media="print" onload="this.media='all'">
@@ -31,7 +28,7 @@
 
 <header>
     <div class="logo">
-        <a href="inicio.html">
+        <a href="index.html">
             <img src="imagenes/nash-logo.png" alt="Logo Pastelería Nash">
         </a>
     </div>
@@ -39,122 +36,81 @@
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
 
     <nav id="nav-menu">
-        <div class="btn-cerrar-menu" onclick="toggleMenu()">×</div>
-        
+        <div class="btn-cerrar-menu" onclick="cerrarMenu()">×</div>
         <ul>
-            <li><a href="#tortas" onclick="cerrarMenu()">Tortas</a></li>
-            <li><a href="#minis" onclick="cerrarMenu()">Minis</a></li>
-            <li><a href="#individuales" onclick="cerrarMenu()">Individual</a></li>
-            <li><a href="#tartas" onclick="cerrarMenu()">Tartas</a></li>
-            <li><a href="#packs" onclick="cerrarMenu()">Packs</a></li>
+            <li><a href="index.html" onclick="cerrarMenu()">Inicio</a></li>
+            <li><a href="catalogo.html" onclick="cerrarMenu()">Catálogo</a></li>
+            <li><a href="nosotros.html" onclick="cerrarMenu()">Nosotros</a></li>
         </ul>
     </nav>
 </header>
 
-<div class="overlay"></div>
+<div class="overlay" onclick="cerrarMenu()"></div>
 
-<div class="cart-bubble" onclick="toggleCarrito()">
-    🛒 <span id="cart-count">0</span>
-</div>
-
-<div id="carrito-panel" class="carrito-panel">
-    <span class="btn-cerrar-carrito" onclick="cerrarTodo()">✕</span>
-
-    <h2>Tu Pedido</h2>
-    <ul id="lista-carrito"></ul>
-
-    <div id="aviso-entrega" class="aviso-entrega">
-        ⏳ Su pedido requiere como mínimo <strong>24 hrs de preparación</strong>
-    </div>
-
-    <div class="entrega">
-        <label>Fecha de entrega:</label>
-        <input type="date" id="fecha-entrega">
-
-        <label>Hora de entrega:</label>
-        <select id="hora-entrega">
-            <option value="">Selecciona un horario</option>
-        </select>
-    </div>
-
-    <button class="buy-btn" onclick="comprarPorWhatsApp()">Comprar por WhatsApp</button>
-</div>
-
-<!-- ✅ OPTIMIZACIÓN #4: Hero con <img> real en lugar de background-image -->
-<section class="hero" style="height: 40vh;">
-    <picture>
-        <source srcset="imagenes/Postres-96.avif" type="image/avif">
-        <source srcset="imagenes/Postres-96.webp" type="image/webp">
-        <img
-            src="imagenes/Postres-96.jpg"
-            alt=""
-            class="hero-img"
-            fetchpriority="high"
-            decoding="sync"
-            width="1920"
-            height="1080"
-        >
-    </picture>
+<!-- ✅ Hero con <img> real en lugar de background-image (fix LCP) -->
+<section class="hero" style="height: 90vh;">
+    <img
+        src="imagenes/Postres-96.jpg"
+        alt=""
+        class="hero-img"
+        fetchpriority="high"
+        decoding="sync"
+        width="1920"
+        height="1080"
+    >
     <div class="hero-overlay" aria-hidden="true"></div>
     <div class="hero-text">
-        <!-- ✅ SEO: H1 único con palabra clave principal -->
-        <h1>Pastelería Nash — Postres Artesanales</h1>
-        <p>Un abrazo dulce en cada bocado · Colección 2026</p>
+        <h1>El arte de lo dulce</h1>
+        <p>Insumos de primera y procesos artesanales que crean momentos inolvidables.</p>
+        <a href="catalogo.html" class="buy-btn hero-cta">Explorar Catálogo 2026</a>
     </div>
 </section>
 
-<section id="tortas" class="section">
+<!-- Sección calidad -->
+<section class="section">
     <div class="container">
-        <h2>Nuestras Tortas</h2>
-        <div class="carousel">
-            <button class="arrow left" onclick="scrollCarousel('contenedor-tortas', -1)">‹</button>
-            <div class="productos-container carousel-track" id="contenedor-tortas"></div>
-            <button class="arrow right" onclick="scrollCarousel('contenedor-tortas', 1)">›</button>
+        <h2>Nuestra Calidad</h2>
+        <div class="calidad-grid">
+
+            <div class="calidad-item">
+                <div class="calidad-icono">✨</div>
+                <h3>Ingredientes Premium</h3>
+                <p>Seleccionamos la mejor materia prima para asegurar un sabor auténtico en cada bocado.</p>
+            </div>
+
+            <div class="calidad-item">
+                <div class="calidad-icono">🥣</div>
+                <h3>Procesos Artesanales</h3>
+                <p>Nada de producción industrial. Respetamos los tiempos de batido y horneado tradicional.</p>
+            </div>
+
+            <div class="calidad-item">
+                <div class="calidad-icono">🎨</div>
+                <h3>Diseño Único</h3>
+                <p>La estética de Nash es inconfundible, cuidamos cada detalle para que sea un regalo a la vista.</p>
+            </div>
+
         </div>
     </div>
 </section>
 
-<section id="minis" class="section alt">
-    <div class="container">
-        <h2>Mini</h2>
-        <div class="carousel">
-            <button class="arrow left" onclick="scrollCarousel('contenedor-minis', -1)">‹</button>
-            <div class="productos-container carousel-track" id="contenedor-minis"></div>
-            <button class="arrow right" onclick="scrollCarousel('contenedor-minis', 1)">›</button>
-        </div>
-    </div>
-</section>
-
-<section id="individuales" class="section">
-    <div class="container">
-        <h2>Individual</h2>
-        <div class="carousel">
-            <button class="arrow left" onclick="scrollCarousel('contenedor-individual', -1)">‹</button>
-            <div class="productos-container carousel-track" id="contenedor-individual"></div>
-            <button class="arrow right" onclick="scrollCarousel('contenedor-individual', 1)">›</button>
-        </div>
-    </div>
-</section>
-
-<section id="tartas" class="section alt">
-    <div class="container">
-        <h2>Tartas & Cakes</h2>
-        <div class="carousel">
-            <button class="arrow left" onclick="scrollCarousel('contenedor-tartas', -1)">‹</button>
-            <div class="productos-container carousel-track" id="contenedor-tartas"></div>
-            <button class="arrow right" onclick="scrollCarousel('contenedor-tartas', 1)">›</button>
-        </div>
-    </div>
-</section>
-
-<section id="packs" class="section">
-    <div class="container">
-        <h2>Packs Dulces</h2>
-        <div class="carousel">
-            <button class="arrow left" onclick="scrollCarousel('contenedor-packs', -1)">‹</button>
-            <div class="productos-container carousel-track" id="contenedor-packs"></div>
-            <button class="arrow right" onclick="scrollCarousel('contenedor-packs', 1)">›</button>
-        </div>
+<!-- ✅ Sección CTA — background-attachment: fixed eliminado (causa scroll lag en móvil)
+     Reemplazado por <img> posicionado absolute, igual que el hero -->
+<section class="cta-section">
+    <img
+        src="imagenes/Postres-131.jpg"
+        alt=""
+        class="cta-img"
+        loading="lazy"
+        decoding="async"
+        width="1920"
+        height="1080"
+    >
+    <div class="cta-overlay" aria-hidden="true"></div>
+    <div class="cta-content">
+        <h2>¿Listo para algo especial?</h2>
+        <p>Visita nuestro catálogo y haz tu pedido con 24 horas de anticipación para garantizar la frescura artesanal de Nash.</p>
+        <a href="catalogo.html" class="buy-btn cta-btn">Ir a la tienda online</a>
     </div>
 </section>
 
@@ -162,7 +118,7 @@
     <div class="container footer-content">
         <div class="footer-section">
             <h3>Pastelería Nash</h3>
-            <p>Somos una pastelería dedicada a crear momentos dulces con productos artesanales y de calidad.</p>
+            <p>Momentos dulces con productos artesanales y de calidad.</p>
         </div>
         <div class="footer-section">
             <h4>Redes</h4>
@@ -178,8 +134,16 @@
     </div>
 </footer>
 
-<!-- ✅ OPTIMIZACIÓN #5: script al final, sin bloquear render -->
-<script src="script.js" defer></script>
+<script>
+    function toggleMenu() {
+        document.getElementById("nav-menu").classList.toggle("activo");
+        document.querySelector(".overlay").classList.toggle("activo");
+    }
+    function cerrarMenu() {
+        document.getElementById("nav-menu").classList.remove("activo");
+        document.querySelector(".overlay").classList.remove("activo");
+    }
+</script>
 
 </body>
 </html>
