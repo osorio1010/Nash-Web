@@ -248,7 +248,7 @@ function configurarFechaMinima() {
     const input = document.getElementById("fecha-entrega");
     if (!input) return;
     const d = new Date();
-    d.setDate(d.getDate() + 1);
+    d.setDate(d.getDate() + 3);
     input.min = d.toISOString().split("T")[0];
 }
 
