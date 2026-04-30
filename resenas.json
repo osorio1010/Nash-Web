@@ -1,0 +1,32 @@
+[
+  {
+    "nombre": "Valentina M.",
+    "estrellas": 5,
+    "texto": "Pedí la torta Tres Leches para el cumpleaños de mi mamá y quedó impresionada. Súper esponjosa y el sabor increíble. 100% recomendada.",
+    "producto": "Torta Tres Leches"
+  },
+  {
+    "nombre": "Carla R.",
+    "estrellas": 5,
+    "texto": "Los mini eclaires son una delicia. Los pedí para una reunión y todos me preguntaron dónde los compré. Volvería a pedir sin dudarlo.",
+    "producto": "Mini Eclaire"
+  },
+  {
+    "nombre": "Javiera P.",
+    "estrellas": 4.5,
+    "texto": "El Pack A es excelente relación precio-calidad. El kuchen de frutos rojos estaba espectacular. La atención por WhatsApp muy rápida.",
+    "producto": "Pack A"
+  },
+  {
+    "nombre": "Daniela F.",
+    "estrellas": 5,
+    "texto": "La torta Pompadour es lo mejor que he probado. La masa crujiente con el manjar es una combinación perfecta. Pedido llegó impecable.",
+    "producto": "Torta Pompadour"
+  },
+  {
+    "nombre": "Sofía L.",
+    "estrellas": 4.5,
+    "texto": "Los muffins de frambuesa estaban deliciosos, tamaño generoso y muy esponjosos. Todo el proceso de pedido fue muy fácil.",
+    "producto": "Muffins"
+  }
+]

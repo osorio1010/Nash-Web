@@ -44,6 +44,67 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="imagenes/Logow.png">
 
+    <style>
+        /* ===== RESEÑAS ===== */
+        .resenas-section { background: #faf8f5; }
+        .resenas-subtitulo {
+            text-align: center;
+            color: #888;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            margin-top: -0.5rem;
+            margin-bottom: 2.5rem;
+            letter-spacing: 0.05em;
+        }
+        .resenas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+        .resena-card {
+            background: #fff;
+            border: 1px solid #ede8e0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .resena-estrellas { font-size: 1.25rem; line-height: 1; }
+        .estrella.llena  { color: #c9973a; }
+        .estrella.media  { color: #c9973a; opacity: 0.55; }
+        .estrella.vacia  { color: #ddd; }
+        .resena-texto {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.05rem;
+            color: #444;
+            line-height: 1.6;
+            flex: 1;
+            margin: 0;
+        }
+        .resena-autor {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+            border-top: 1px solid #f0ebe3;
+            padding-top: 0.75rem;
+        }
+        .resena-nombre {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #333;
+            letter-spacing: 0.04em;
+        }
+        .resena-producto {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            color: #c9973a;
+            letter-spacing: 0.03em;
+        }
+    </style>
+
     <!-- ✅ SEO: Schema.org — Bakery local -->
     <script type="application/ld+json">
     {
@@ -153,6 +214,15 @@
     </div>
 </section>
 
+<!-- ✅ Sección de reseñas -->
+<section class="section resenas-section">
+  <div class="container">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <p class="resenas-subtitulo">Opiniones reales de quienes ya probaron Nash</p>
+    <div class="resenas-grid" id="resenas-grid"></div>
+  </div>
+</section>
+
 <footer class="footer">
     <div class="container footer-content">
         <div class="footer-section">
@@ -182,6 +252,40 @@
         document.getElementById("nav-menu").classList.remove("activo");
         document.querySelector(".overlay").classList.remove("activo");
     }
+
+    // ✅ Reseñas dinámicas desde resenas.json
+    function renderEstrellas(valor) {
+        let html = '';
+        for (let i = 1; i <= 5; i++) {
+            if (valor >= i) {
+                html += '<span class="estrella llena">★</span>';
+            } else if (valor >= i - 0.5) {
+                html += '<span class="estrella media">★</span>';
+            } else {
+                html += '<span class="estrella vacia">★</span>';
+            }
+        }
+        return html;
+    }
+
+    fetch('resenas.json')
+        .then(r => r.json())
+        .then(resenas => {
+            const grid = document.getElementById('resenas-grid');
+            grid.innerHTML = resenas.map(r => `
+                <div class="resena-card">
+                    <div class="resena-estrellas">${renderEstrellas(r.estrellas)}</div>
+                    <p class="resena-texto">"${r.texto}"</p>
+                    <div class="resena-autor">
+                        <span class="resena-nombre">${r.nombre}</span>
+                        <span class="resena-producto">${r.producto}</span>
+                    </div>
+                </div>
+            `).join('');
+        })
+        .catch(() => {
+            document.getElementById('resenas-grid').style.display = 'none';
+        });
 </script>
 
 </body>

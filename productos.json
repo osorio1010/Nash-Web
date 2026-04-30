@@ -131,7 +131,7 @@
     "nombre": "Pack A",
     "categoria": "pack",
     "imagen": "imagenes/seleccion-a.png",
-    "descripcion": "Kuchen de frutos rojos (10-12 personas) + 30 mini eclaire + 30 mini chilenitos",
+    "descripcion": "Kuchen de frutos rojos (10-12 personas) + 20 eclaire individuales + 20 chilenitos individuales",
     "precios": [
       { "precio": 54900 }
     ]
@@ -140,7 +140,7 @@
     "nombre": "Pack B",
     "categoria": "pack",
     "imagen": "imagenes/pack-b.png",
-    "descripcion": "Pie de limón (10-12 personas) + 30 mini profiteroles + 30 mini cachitos",
+    "descripcion": "Pie de limón (10-12 personas) + 20 profiteroles individuales + 20 cachitos individuales",
     "precios": [
       { "precio": 54900 }
     ]
@@ -149,7 +149,7 @@
     "nombre": "Pack C",
     "categoria": "pack",
     "imagen": "imagenes/pack-c.png",
-    "descripcion": "Lemon cake + 18 mini donuts de manjar + 18 mini donuts de Nutella",
+    "descripcion": "Lemon cake + 12 donuts de manjar + 12 donuts de Nutella",
     "precios": [
       { "precio": 46900 }
     ]
